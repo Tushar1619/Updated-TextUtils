@@ -3,23 +3,23 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 export default function Navbar(props) {
-    
+
     const [linkItem, setLinkItem] = useState('description')
-    
-    const sttClick = ()=>{
+
+    const sttClick = () => {
         setLinkItem('speechtotext');
     }
-    const homeClick = ()=>{
+    const homeClick = () => {
         setLinkItem('home');
     }
-    const desc = ()=>{
+    const desc = () => {
         setLinkItem('');
     }
     return (
         <>
-            <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode} fixed-top` } >
+            <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode} fixed-top`} >
                 <div className="container-fluid">
-                    <Link className='navbar-brand' to="/description" onClick={desc}>
+                    <Link className='navbar-brand' to="/" onClick={desc}>
                         {props.title}
                     </Link>
                     <button
@@ -36,7 +36,7 @@ export default function Navbar(props) {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className={`nav-link ${linkItem==='home'?'active':''}`} aria-current="page" to="/home" onClick={homeClick}>
+                                <Link className={`nav-link ${linkItem === 'home' ? 'active' : ''}`} aria-current="page" to="/home" onClick={homeClick}>
                                     TextAnalysis
                                 </Link>
                             </li>
@@ -46,7 +46,7 @@ export default function Navbar(props) {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={`nav-link ${linkItem==='speechtotext'?'active':''}`}  aria-current="page" to="/speechtotext" onClick={sttClick}>
+                                <Link className={`nav-link ${linkItem === 'speechtotext' ? 'active' : ''}`} aria-current="page" to="/speechtotext" onClick={sttClick}>
                                     SpeechToText
                                 </Link>
                             </li>
@@ -56,9 +56,12 @@ export default function Navbar(props) {
                                 </Link>
                             </li> */}
                         </ul>
+                        <button className={`btn-${props.mode === 'light' ? 'primary' : 'secondary'} btn  mx-1`} > <a href="https://644cd721ac9d3670a844a982--samurai007.netlify.app/" className="nav-link" rel="noreferrer" target="_blank" >AI Text Summarizer</a>  </button>
                         <div className="form-check form-switch">
+
                             <input className="form-check-input" type="checkbox" role="switch" onClick={props.toggle} id="flexSwitchCheckDefault" />
                             <label className={`form-check-label text-${props.mode === 'light' ? 'dark' : 'light'}`} htmlFor="flexSwitchCheckDefault">Dark mode</label>
+
                         </div>
                     </div>
                 </div>

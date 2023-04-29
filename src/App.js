@@ -51,7 +51,7 @@ function App() {
           <Routes>
             <Route path='/home' exact element={<TextForm heading="Enter the text to analyze"  mode={mode}/>} />
             <Route path='/speechtotext' exact element={<SpeechToText mode={mode}/>} />
-            <Route path='/description' exact element={<Description  mode={mode}/>} />
+            <Route path='/' exact element={<Description  mode={mode}/>} />
           </Routes>
         </div>
       </Router>
